@@ -1,0 +1,40 @@
+.body {
+    height: 100vh;
+    background-image: url(../../../public/background/1676701519_catherineasquithgallery-com-p-zelenii-kiberpank-fon-224.png);
+    overflow: hidden;
+}
+
+.body__section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 1000px;
+    width: 1000px;
+    margin-top: 5%;
+    backdrop-filter: blur(30px);
+    border: 20px solid rgb(182, 26, 140);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    padding: 20px;
+  }
+
+.body__section__text {
+    color: rgb(255, 60, 203);
+    font-family: 'Cyber';
+    font-size: 60px;
+    text-shadow: rgb(255, 60, 203) 1px 0 10px;
+}
+
+.cursor {
+    color: rgb(255, 60, 203);
+    font-family: 'Cyber';
+    font-size: 60px;
+    height: 100%;
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }

@@ -1,4 +1,4 @@
-import '@/styles/index.scss';
+import '@/styles/variables.scss';
 
 import { Alegreya } from 'next/font/google';
 import { Roboto } from 'next/font/google';
