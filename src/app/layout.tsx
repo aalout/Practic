@@ -2,6 +2,7 @@ import '@/styles/variables.scss';
 
 import { Alegreya } from 'next/font/google';
 import { Roboto } from 'next/font/google';
+import Header from '@/components/Header';
 
 import type { Metadata } from "next";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ru" className={`${alegreya.variable} ${roboto.variable}`}>
+            <Header/>
             <body className="wrapper">
                     <main>{children}</main>
             </body>
