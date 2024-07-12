@@ -1,6 +1,8 @@
 .body {
-    max-height: 100vh;
+    height: 100vh;
     background-image: url(../../../public/background/1676701519_catherineasquithgallery-com-p-zelenii-kiberpank-fon-224.png);
+    padding-top: 140px;
+    box-sizing: border-box;
 }
 
 .body__section {
@@ -10,7 +12,6 @@
     margin: 0 auto;
     height: 1000px;
     width: 1000px;
-    margin-top: 5%;
     backdrop-filter: blur(30px);
     border: 20px solid rgb(182, 26, 140);
     clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);

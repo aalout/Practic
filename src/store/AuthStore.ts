@@ -1,37 +1,40 @@
-import { makeAutoObservable, observable, action } from 'mobx';
-import { useQuery, useMutation } from 'react-query';
-import authService from '../services/auth';
+import { observable, action, computed } from 'mobx';
+import axios from 'axios';
 
 class AuthStore {
+  @observable token = null;
   @observable isLoggedIn = false;
-  @observable user: any = null;
-
-  constructor() {
-    makeAutoObservable(this);
-  }
 
   @action
-  async login(credentials: any) {
+  async signin(email, password) {
     try {
-      const response = await authService.login(credentials);
+      const response = await axios.post('https://api.vertical.chulakov.dev/api/auth/signin/email', {
+        email,
+        password,
+      });
+      this.token = response.data.token;
       this.isLoggedIn = true;
-      this.user = response.data;
-      // Сохраните токен авторизации (например, в localStorage)
     } catch (error) {
-      // Обработка ошибок
+      console.error(error);
     }
   }
 
   @action
-  async register(credentials: any) {
-    // ... аналогично login
+  async refreshToken() {
+    try {
+      const response = await axios.post('https://api.vertical.chulakov.dev/api/auth/refresh', {});
+      this.token = response.data.token;
+    } catch (error) {
+      console.error(error);
+    }
   }
 
-  @action
-  logout() {
-    this.isLoggedIn = false;
-    this.user = null;
+  @computed
+  get isAuthorized() {
+    return this.isLoggedIn && this.token !== null;
   }
 }
 
-export default new AuthStore();
+const authStore = new AuthStore();
+
+export default authStore;

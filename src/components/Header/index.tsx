@@ -5,19 +5,24 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className={styles.header}>
+    <div className={styles.header}>
         <nav className={styles.header__nav}>
             <Link href="/auth" className={styles.header__nav__link}>
                 <div className={styles.header__nav__link__con__1}>
-                    <p>Sign up</p>
+                    <p>Sign in</p>
                 </div>
             </Link>
-            <Link href="#" className={styles.header__nav__link}>
+            <Link href="/" className={styles.header__nav__link}>
+                <div className={styles.header__nav__link__con__3}>
+                    <p>Home</p>
+                </div>
+            </Link>
+            <Link href="/dashboard" className={styles.header__nav__link}>
                 <div className={styles.header__nav__link__con__2}>
                     <p>Dashboard</p>
                 </div>
             </Link>
         </nav>
-    </header>
+    </div>
   );
 }

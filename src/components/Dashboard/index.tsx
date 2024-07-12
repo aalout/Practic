@@ -36,10 +36,10 @@ export default function Dashboard() {
 
 
   return (
-    <body className={styles.body}>
+    <div className={styles.body}>
         <section className={styles.body__section}>
             <p className={styles.body__section__text}>{typedText}<span className={styles.cursor}>|</span></p> 
         </section>
-    </body>
+    </div>
   );
 }

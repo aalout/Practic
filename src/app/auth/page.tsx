@@ -1,10 +1,11 @@
-import Dashboard from "@/components/Dashboard";
-import Image from "next/image";
+import dynamic from 'next/dynamic';
 
-export default function Home() {
+const Auth = dynamic(() => import('../../components/Auth'), { ssr: false });
+
+export default function Sign_in() {
   return (
     <div>
-        ppsps
+        <Auth/>
     </div>
   );
 }

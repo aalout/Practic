@@ -1,23 +1,7 @@
 import '@/styles/variables.scss';
-
-import { Alegreya } from 'next/font/google';
-import { Roboto } from 'next/font/google';
+import '@/styles/index.scss'
 import Header from '@/components/Header';
-
 import type { Metadata } from "next";
-
-const alegreya = Alegreya({
-    subsets: ['cyrillic'],
-    variable: '--font-alegreya',
-    display: 'swap',
-});
-
-const roboto = Roboto({
-    subsets: ['cyrillic'],
-    weight: ['400', '700'],
-    variable: '--font-roboto',
-    display: 'swap',
-});
 
 export const metadata: Metadata = {
     title: "Auth",
@@ -30,9 +14,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="ru" className={`${alegreya.variable} ${roboto.variable}`}>
-            <Header/>
+        <html lang="eng">
             <body className="wrapper">
+            <Header/>
                     <main>{children}</main>
             </body>
         </html>

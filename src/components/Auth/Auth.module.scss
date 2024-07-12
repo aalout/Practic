@@ -1,0 +1,88 @@
+.body {
+    height: 100vh;
+    background-image: url(../../../public/background/341fde43-b85f-42b0-a7dd-74f1d518c1a9_rw_3840.jpg);
+    display: flex;
+    justify-content: center;
+}
+
+.body__section {
+    margin-top: 200px;
+    margin-bottom: 400px;
+    backdrop-filter: blur(10px);
+    border: 5px solid rgb(182, 26, 140);
+    transform: skewX(5deg);
+    padding: 30px;
+
+    h1 {
+        position: absolute;
+        top: 0;
+        color: rgb(255, 60, 203);
+        font-family: 'Cyber';
+        font-size: 200px;
+        text-shadow: rgb(255, 60, 203) 1px 0 10px;
+        opacity: 0.3;
+        margin: 0;
+        margin-top: 110px;
+    }
+}
+
+.body__section__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    height: 400px;
+    gap: 30px;
+    transform: skewX(-5deg);
+    margin-top: 200px;
+
+    input {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: white;
+        border: 5px solid rgb(182, 26, 140);
+        transform: skewX(5deg);
+        padding: 10px;
+        width: 500px;
+        height: 40px;
+
+        &:focus {
+            color: white;
+            font-size: 18px;
+            font-family: "Cyber";
+            background-color: rgba(0, 0, 0, 0.25);
+            border-color: rgb(182, 26, 140);
+            outline: 0;
+            box-shadow: none;
+        }
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
+            font-family: "Cyber";
+            transform: skewX(-5deg);
+        }
+    }
+
+    button {
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.1);
+        color: white;
+        padding: 10px;
+        width: 200px;
+        border: none;
+        cursor: pointer;
+        box-shadow: inset 0 0 0 0 rgb(182, 26, 140);
+        transition: all 0.5s ease-out;
+
+        span {
+            color: white;
+            font-size: 18px;
+            font-family: "Cyber";
+        }
+
+        &:hover {
+            transform: skewX(5deg);
+            box-shadow: inset 200px 0 0 0 rgb(182, 26, 140);
+        }
+    }
+}
