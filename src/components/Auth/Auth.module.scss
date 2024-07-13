@@ -12,6 +12,7 @@
     border: 5px solid rgb(182, 26, 140);
     transform: skewX(5deg);
     padding: 30px;
+    overflow: hidden;
 
     h1 {
         position: absolute;
@@ -39,6 +40,8 @@
     input {
         background-color: rgba(0, 0, 0, 0.1);
         color: white;
+        font-size: 20px;
+        font-family: "Cyber";
         border: 5px solid rgb(182, 26, 140);
         transform: skewX(5deg);
         padding: 10px;
@@ -47,7 +50,7 @@
 
         &:focus {
             color: white;
-            font-size: 18px;
+            font-size: 20px;
             font-family: "Cyber";
             background-color: rgba(0, 0, 0, 0.25);
             border-color: rgb(182, 26, 140);
@@ -57,7 +60,7 @@
 
         &::placeholder {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 18px;
+            font-size: 20px;
             font-family: "Cyber";
             transform: skewX(-5deg);
         }
@@ -81,8 +84,14 @@
         }
 
         &:hover {
-            transform: skewX(5deg);
+            transform: skewX(10deg);
             box-shadow: inset 200px 0 0 0 rgb(182, 26, 140);
         }
     }
+}
+
+.error {
+    color: white;
+    font-size: 20px;
+    font-family: "Cyber";
 }

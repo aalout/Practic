@@ -2,8 +2,10 @@
 
 import styles from "./Header.module.scss"
 import Link from "next/link";
+import { observer } from 'mobx-react-lite';
+import authStore from '../../store/AuthStore';
 
-export default function Header() {
+const Header = observer(() => { 
   return (
     <div className={styles.header}>
         <nav className={styles.header__nav}>
@@ -22,7 +24,12 @@ export default function Header() {
                     <p>Dashboard</p>
                 </div>
             </Link>
+            {authStore.isLoggedIn && (
+                <button onClick={() => authStore.signout()}>Выйти</button>
+              )}
         </nav>
     </div>
-  );
-}
+    );
+});
+
+export default Header;
