@@ -1,6 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
 import AuthStore from '@/store/AuthStore';
+import Unauthorized from '@/components/Unauthorized';
+import DashContent from '@/components/DashContent';
 
 export default function Dash() {
   const [showAuthMessage, setShowAuthMessage] = useState(false);
@@ -14,12 +16,10 @@ export default function Dash() {
   return (
     <div>
       {AuthStore.isLoggedIn && (
-        <div>
-          sasasas 
-        </div>
+        <DashContent/>
       )}
       {!AuthStore.isLoggedIn && (
-        <p>Для доступа к этой странице вам необходимо авторизоваться.</p>
+        <Unauthorized/>
       )}
     </div>
   );

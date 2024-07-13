@@ -1,0 +1,43 @@
+.body {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background-image: url(../../../public/background/970e2dd2628b416af6fb950c8b80a1fb.jpeg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.body__section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 300px;
+    backdrop-filter: blur(10px);
+    border: 5px solid rgb(182, 26, 140);
+    transform: skewX(-25deg);
+
+    p {
+        font-size: 20px;
+        font-family: "Cyber";
+        color: rgb(255, 255, 255);
+        transform: skewX(25deg);
+        text-shadow: rgb(93, 0, 146) 1px 0 10px;
+    }
+}
+
+.body__section__link {
+    text-decoration: none;
+    color: rgb(0, 238, 255);
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
+    transition: all 0.5s ease;
+
+    &:hover {
+        color: white;
+    }
+}

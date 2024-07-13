@@ -11,8 +11,21 @@ const Auth = observer(() => {
 
   const handleSignIn = async (e) => {
     e.preventDefault();
+  
+    if (email === '' || password === '') {
+      authStore.error = 'Incorrect format';
+      return;
+    }
+  
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      authStore.error = 'Incorrect email format';
+      return;
+    }
+  
     await authStore.signin(email, password);
-  }
+  };
+  
   return (
     <div className={styles.body}>
         <section className={styles.body__section}>
@@ -20,7 +33,7 @@ const Auth = observer(() => {
           <form className={styles.body__section__form} onSubmit={handleSignIn}>
             <input 
               type="text" 
-              placeholder="Username" 
+              placeholder="Email" 
               value={email} 
               onChange={(e) => setEmail(e.target.value)}
             />

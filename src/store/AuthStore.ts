@@ -2,10 +2,15 @@
 import { makeAutoObservable } from 'mobx';
 import usersData from './users.json';
 
+interface User {
+  email: string;
+  password: string;
+}
+
 class AuthStore {
   isLoggedIn = false;
-  user = null;
-  error = null;
+  user: User | null = null; 
+  error: string | null = null;
 
   constructor() {
     makeAutoObservable(this);
@@ -15,12 +20,12 @@ class AuthStore {
   checkAuth() {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
-      this.user = JSON.parse(storedUser);
+      this.user = JSON.parse(storedUser) as User;
       this.isLoggedIn = true;
     }
   }
 
-  async signin(email, password) {
+  async signin(email: string, password: string) {
     try {
       const user = usersData.find(u => u.email === email && u.password === password);
 
@@ -32,7 +37,7 @@ class AuthStore {
       } else {
         this.isLoggedIn = false;
         this.user = null;
-        this.error = 'Incorrect username or password';
+        this.error = 'Incorrect email or password';
       }
     } catch (error) {
         this.error = 'Auth error';

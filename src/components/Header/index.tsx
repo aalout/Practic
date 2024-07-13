@@ -25,7 +25,7 @@ const Header = observer(() => {
                 </div>
             </Link>
             {authStore.isLoggedIn && (
-                <button onClick={() => authStore.signout()}>Выйти</button>
+                <button onClick={() => authStore.signout()}>Log out</button>
               )}
         </nav>
     </div>
