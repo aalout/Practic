@@ -8,12 +8,13 @@ import { useState } from 'react';
 const Auth = observer(() => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const handleSignIn = async (e) => {
     e.preventDefault();
   
     if (email === '' || password === '') {
-      authStore.error = 'Incorrect format';
+      authStore.error = 'Enter your data';
       return;
     }
   
@@ -24,6 +25,10 @@ const Auth = observer(() => {
     }
   
     await authStore.signin(email, password);
+    setShowSuccessMessage(true);
+    setTimeout(() => {
+      setShowSuccessMessage(false);
+    }, 1500);
   };
   
   return (
@@ -49,6 +54,7 @@ const Auth = observer(() => {
             </button>
           </form>
         </section>
+        {showSuccessMessage && authStore.isLoggedIn && <div className={styles.success}><p className={styles.success__text}>Auth success</p></div>}
     </div>
   );
 });
