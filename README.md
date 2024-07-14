@@ -1,4 +1,5 @@
-# Next.js proj
+# Next.js auth proj
+![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
 
 ## Email: user@user.com
 ## Password: 123123
@@ -19,11 +20,11 @@
 - /Unauthorized: компонент для страницы Dashboard, показывается в том случае, если пользователь не зарегистрирован
 
 ## store:
-- /AuthStore.ts: здесь с помощью MobX обеспечивается обновление UI при изменениях в состоянии (авторизации).
-- - isLoggedIn - авторизован ли пользователь
-- - user - в этом обьекте хранится информация о текущем авторизованном пользователе в localstorage
-- - error - обработка ошибок
-- - checkAuth - функция, вызывающаяся при загрузке страницы, которая проверяет - есть ли в localstorage информация о пользователе. Если да, то устанавливается isLoggedIn = true и загружается user из localStorage
-- - signin(email, password) - функция, обрабатывающая вход, проверяет, есть ли в usersData из users.json такой пользователь. Если пользователь найден, isLoggedIn становится true`, user сохраняется в AuthStore и localStorage, а error становится null
-- - signout - всыход из аккаунта, очищает инфу из localstorage
-- - /users.json: тот самый плохой и неправильный файл, в котором хранятся данные пользователей.
+AuthStore.ts: здесь с помощью MobX обеспечивается обновление UI при изменениях в состоянии (авторизации).
+- isLoggedIn - авторизован ли пользователь
+- user - в этом обьекте хранится информация о текущем авторизованном пользователе в localstorage
+- error - обработка ошибок
+- checkAuth - функция, вызывающаяся при загрузке страницы, которая проверяет - есть ли в localstorage информация о пользователе. Если да, то устанавливается isLoggedIn = true и загружается user из localStorage
+- signin(email, password) - функция, обрабатывающая вход, проверяет, есть ли в usersData из users.json такой пользователь. Если пользователь найден, isLoggedIn становится true`, user сохраняется в AuthStore и localStorage, а error становится null
+- signout - всыход из аккаунта, очищает инфу из localstorage
+- /users.json: тот самый плохой и неправильный файл, в котором хранятся данные пользователей.
